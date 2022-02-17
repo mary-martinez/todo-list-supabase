@@ -27,13 +27,19 @@ todoForm.addEventListener('submit', async (e) => {
 
 async function displayTodos() {
     // fetch the todos
+    todosEl.textContent = '';
     const todos = await getTodos();
-    console.log(todos);
+    // console.log(todos);
     // display the list of todos
-    // for (let todo of todos) {
-    //     const nextTask = renderTodo(todo);
-    //     todosEl.append(nextTask);
-    // }
+    for (let todo of todos) {
+        const nextTask = renderTodo(todo);
+        nextTask.addEventListener('click', async () => {
+            console.log('clicking a task');
+            await completeTodo(todo.id);
+            await displayTodos();
+        });
+        todosEl.append(nextTask);
+    }
     // be sure to give each todo an event listener
 
     // on click, complete that todo
