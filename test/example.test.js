@@ -12,10 +12,10 @@ test('time to test a function', (expect) => {
     // Call the function you're testing and set the result to a const
     const actual = renderTodo({
         complete: true,
-        created_at: "2022-02-16T20:44:42+00:00",
+        created_at: '2022-02-16T20:44:42+00:00',
         id: 1,
-        todo: "Pet the cats",
-        user_id: "81f7b3f0-c985-43ab-a1dd-d879667dabd1"
+        todo: 'Pet the cats',
+        user_id: '81f7b3f0-c985-43ab-a1dd-d879667dabd1'
     });
 
     //Expect

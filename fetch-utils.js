@@ -16,7 +16,6 @@ export async function deleteAllTodos() {
 
 export async function getTodos() {
     const response = await client.from('todos').select().order('id');
-    console.log(response);
     return checkError(response);
 }
 
